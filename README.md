@@ -2,7 +2,8 @@
 
 This is an example Webex Device Kiosk Web App which provides a way to exit Kiosk Mode on via a PIN Authentication 
 
-![Snapshot Macro](https://github.com/wxsd-sales/exit-kiosk-webapp/assets/21026209/4dc11dd6-8320-4422-9c6b-ef57bf8f4a8d)
+![Snapshot Macro](https://github.com/wxsd-sales/exit-kiosk-web-app/assets/21026209/7b0dd5c1-e88c-450f-83a9-e0e55004ba51)
+
 
 ## Overview
 
@@ -23,17 +24,20 @@ The example Bank Kiosk Web App features a PIN Authentication modal where enterin
 1.  Log into your Webex Devices web interface
 2.  Set WebEngine Mode to ```On``` and AllowDeviceCertificate to ```True```
 3.  Create a local account on the device with ```integrator``` role and disable the password reset requirement. Note the username and password for the next step
-![image](https://github.com/wxsd-sales/exit-kiosk-webapp/assets/21026209/efafe00c-dacc-485a-a618-9669189dc907)
+![image](https://github.com/wxsd-sales/exit-kiosk-web-app/assets/21026209/d07662ac-4e6a-4124-93ca-ae2cd2889557)
+
 
 
 4. Set the Kiosk URL to the Exit Kiosk Web App and include the local username and password within the URL Parameters and save
       ```
-      https://wxsd-sales.github.io/exit-kiosk-webapp/exitKioskWebapp.html?username=kioskwebapp&password=Cisco123
+      https://wxsd-sales.github.io/exit-kiosk-web-app/exitKioskWebapp.html?username=kioskwebapp&password=Cisco123
       ```
-      ![image](https://github.com/wxsd-sales/exit-kiosk-webapp/assets/21026209/d26f5655-b7c1-4a75-a4b6-2a3dfb790ad0)
+      ![image](https://github.com/wxsd-sales/exit-kiosk-web-app/assets/21026209/584f4009-1f33-4ff6-9d1d-ebf683ccf69c)
+
 
 5. Set the Kiosk Mode to ```On``` to enable Kiosk Mode
-![image](https://github.com/wxsd-sales/exit-kiosk-webapp/assets/21026209/d6b57ad4-9ebf-4464-a8dc-963cf71b2470)
+![image](https://github.com/wxsd-sales/exit-kiosk-web-app/assets/21026209/d5a82808-aa6d-453e-ab3d-8f6bc3ef6f83)
+
 
     
     
