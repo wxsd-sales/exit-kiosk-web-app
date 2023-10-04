@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exit Kiosk Web App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/jsxapi@5.1.1/dist/jsxapi.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <style>
+      html,
+      body {
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+        overflow-y: scroll; /* Add vertical scrollbar */
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="hero is-fullheight">
+      <div class="hero-head"></div>
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns has-text-centered is-multiline">
+            <div class="column is-12">
+               <figure class="image">
+              <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewbox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+              </figure>
+                 <p class="subtitle pt-4 has-text-dark">
+                What can we help you with?
+              </p>
+            </div>
+
+            <!-- cards-->
+            <div class="column is-3">
+              <div class="card box">
+                <div class="card-image">
+                  <figure class="image">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewbox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+                  </figure>
+                </div>
+                <div class="buttons">
+                  
+                  <button
+                    class="button is-fullwidth is-medium is-link"
+                    onclick="dialQueue(0)"
+                  >
+                    Mortgage
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="card box">
+                <div class="card-image">
+                  <figure class="image">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewbox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M400 96l0 .7c-5.3-.4-10.6-.7-16-.7H256c-16.5 0-32.5 2.1-47.8 6c-.1-2-.2-4-.2-6c0-53 43-96 96-96s96 43 96 96zm-16 32c3.5 0 7 .1 10.4 .3c4.2 .3 8.4 .7 12.6 1.3C424.6 109.1 450.8 96 480 96h11.5c10.4 0 18 9.8 15.5 19.9l-13.8 55.2c15.8 14.8 28.7 32.8 37.5 52.9H544c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32H512c-9.1 12.1-19.9 22.9-32 32v64c0 17.7-14.3 32-32 32H416c-17.7 0-32-14.3-32-32V448H256v32c0 17.7-14.3 32-32 32H192c-17.7 0-32-14.3-32-32V416c-34.9-26.2-58.7-66.3-63.2-112H68c-37.6 0-68-30.4-68-68s30.4-68 68-68h4c13.3 0 24 10.7 24 24s-10.7 24-24 24H68c-11 0-20 9-20 20s9 20 20 20H99.2c12.1-59.8 57.7-107.5 116.3-122.8c12.9-3.4 26.5-5.2 40.5-5.2H384zm64 136a24 24 0 1 0 -48 0 24 24 0 1 0 48 0z"/></svg>
+                  </figure>
+                </div>
+                <div class="buttons">
+                  <button
+                    class="button is-fullwidth is-medium is-link"
+                    onclick="dialQueue(1)"
+                  >
+                    Savings
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="card box">
+                <div class="card-image">
+                  <figure class="image">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewbox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M96 96V320c0 35.3 28.7 64 64 64H576c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160c-35.3 0-64 28.7-64 64zm64 160c35.3 0 64 28.7 64 64H160V256zM224 96c0 35.3-28.7 64-64 64V96h64zM576 256v64H512c0-35.3 28.7-64 64-64zM512 96h64v64c-35.3 0-64-28.7-64-64zM288 208a80 80 0 1 1 160 0 80 80 0 1 1 -160 0zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V360c0 66.3 53.7 120 120 120H520c13.3 0 24-10.7 24-24s-10.7-24-24-24H120c-39.8 0-72-32.2-72-72V120z"/></svg>
+                  </figure>
+                </div>
+                <div class="buttons">
+                  <button
+                    class="button is-fullwidth is-medium is-link"
+                    onclick="dialQueue(3)"
+                  >
+                    Loans
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="card box">
+                <div class="card-image">
+                  <figure class="image">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewbox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/></svg>
+                  </figure>
+                </div>
+                <div class="buttons">
+                  <button
+                    class="button is-fullwidth is-medium is-link"
+                    onclick="dialQueue(4)"
+                  >
+                    Investing
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- cards end -->
+          </div>
+
+          <div class="columns has-text-centered">
+            <div class="column">
+              Click any of the buttons above to speak with a representative
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-foot">
+        <nav class="level pb-4">
+          <!-- Left side -->
+          <div class="level-left"></div>
+
+          <!-- Right side -->
+          <div class="level-item level-right pr-4">
+            <button class="button js-modal-trigger" data-target="modal-js-pin">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"/></svg>
+              </span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <div id="modal-js-pin" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Enter PIN To Exit Kiosk Mode</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <h1 class="title has-text-centered" id="pinInput">_ _ _ _</h1>
+
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <button class="tile is-child button is-large js-digit-trigger">
+                1
+              </button>
+            </div>
+            <div class="tile is-parent">
+              <button class="tile is-child button is-large js-digit-trigger">
+                2
+              </button>
+            </div>
+            <div class="tile is-parent">
+              <button class="tile is-child button is-large js-digit-trigger">
+                3
+              </button>
+            </div>
+          </div>
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <button class="tile is-child button is-large js-digit-trigger">
+                4
+              </button>
+            </div>
+            <div class="tile is-parent">
+              <button class="tile is-child button is-large js-digit-trigger">
+                5
+              </button>
+            </div>
+            <div class="tile is-parent">
+              <button class="tile is-child button is-large js-digit-trigger">
+                6
+              </button>
+            </div>
+          </div>
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <button class="tile is-child button is-large js-digit-trigger">
+                7
+              </button>
+            </div>
+            <div class="tile is-parent">
+              <button class="tile is-child button is-large js-digit-trigger">
+                8
+              </button>
+            </div>
+            <div class="tile is-parent">
+              <button class="tile is-child button is-large js-digit-trigger">
+                9
+              </button>
+            </div>
+          </div>
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <button
+                class="tile is-child button is-large is-warning js-digit-trigger"
+              >
+                Clear
+              </button>
+            </div>
+            <div class="tile is-parent">
+              <button class="tile is-child button is-large js-digit-trigger">
+                0
+              </button>
+            </div>
+            <div class="tile is-parent">
+              <button
+                class="tile is-child button is-large is-success js-digit-trigger"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      const queues = ["1111", "2222", "3333", "4444"];
+      const url =
+        "https://www.youtube.com/embed/videoseries?list=PL_YnWo4XhzTcEQ1nFCzvxfklMv2kHbl9-&autoplay=1&loop=1/";
+
+      const queryString = window.location.search;
+      
+      // username, password and optional ipAddress from URL parameters
+      const urlParams = new URLSearchParams(queryString);
+      const username = urlParams.get("username");
+      const password = urlParams.get("password");
+      const ipAddress = urlParams.get("ipAddress");
+
+      console.log(`Username [${username}] - Password [${password}] - IP Address [${ipAddress}]`);
+
+      function dialQueue(number) {
+        if (username && password) {
+          const host = ipAddress == null ? "localhost" : ipAddress;
+          console.log(`Connecting to [${host}]`);
+          jsxapi
+            .connect(host, {
+              username: username,
+              password: password,
+            })
+            .on("error", (error) => {
+              console.warn(`Error connecting to [${host}] ` + error);
+              window.location.href = "sip:number";
+            })
+            .on("ready", async (xapi) => {
+              console.log(`Connected to [${host}]`);
+              console.log(`Dialling Queue - ${queues[number]}`);
+              xapi.Status.Call.RemoteNumber.on((remoteNumber) => {
+                console.log(`Remote Number [${remoteNumber}]`);
+
+                // Check if a monitoring number is present
+                const match = queues.find((queue) =>
+                  remoteNumber.startsWith(queue)
+                );
+                // Ignore calls with not matched number
+                if (!match) {
+                  console.log("No number matched - clearing webview");
+                  xapi.Command.UserInterface.WebView.Clear();
+                  return;
+                }
+                console.log("Call Queue detected - displaying commerical");
+                xapi.Command.UserInterface.WebView.Display({
+                  Mode: "Fullscreen",
+                  Target: "OSD",
+                  Title: "Please wait 😊",
+                  Url: url,
+                });
+              });
+
+              xapi.Status.SystemUnit.State.NumberOfActiveCalls.on(
+                (callCount) => {
+                  if (callCount != 0) return;
+                  console.log('Calls dropped to 0, clearing webview and closing websocket')
+                  xapi.Command.UserInterface.WebView.Clear().then(() =>
+                    xapi.close()
+                  );
+                }
+              );
+
+              xapi.Command.Dial({ Number: queues[number], Protocol: "Sip" });
+            });
+        } else {
+          console.log(
+            `No Credentials found - falling back to SIP Protocal Handler`
+          );
+          window.location.href = "sip:" + queues[number];
+        }
+      }
+
+      function exitKiosk() {
+        if (username && password) {
+          const host = ipAddress == null ? "localhost" : ipAddress;
+          console.log(`Connecting to [${host}]`);
+          jsxapi
+            .connect(host, {
+              username: username,
+              password: password,
+            })
+            .on("error", (error) => {
+              console.warn(`Error connecting to [${host}] ` + error);
+              alert("Unable to connect to device");
+            })
+            .on("ready", async (xapi) => {
+              console.log(`Connected to [${host}]`);
+              console.log(`Setting Kiosk Mode to Off`);
+              xapi.Config.UserInterface.Kiosk.Mode.set("Off");
+            });
+        } else {
+          console.log(`No Device credentials provided`);
+          alert("No Device credentials provided");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Functions to open and close a modal
+        function openModal($el) {
+          $el.classList.add("is-active");
+        }
+
+        function enterDigit(digit) {
+          console.log("Enter digit", digit);
+          const pinInput = document.getElementById("pinInput");
+          const input = pinInput.innerHTML;
+          let array = input.split(" ");
+          let available = 0;
+
+          for (const num of array) {
+            if (num == "_") {
+              available = available + 1;
+            }
+          }
+
+          console.log("Available Input Count", available, array);
+          if (available > 0) {
+            array.shift();
+            array.push(digit);
+            let newInput = array.join(" ");
+            console.log("newinput", newInput);
+            pinInput.innerHTML = newInput;
+          }
+        }
+
+        function submitPin() {
+          console.log("Submitting PIN");
+          let pinInput = document.getElementById("pinInput").innerHTML;
+          let input = pinInput.split(" ");
+          let count = 0;
+
+          for (const num of input) {
+            if (num == "_") {
+              count = count + 1;
+            }
+          }
+
+          if (count == 0) {
+            let inputPin = input.join("");
+
+            if (inputPin === "1234") {
+              console.log("Pin Valid - Exiting Kiosk Mode");
+              exitKiosk();
+            } else {
+              console.log("Pin invalid, resetting PIN");
+              clearPin();
+            }
+          } else {
+            console.log("Not enough input digits");
+          }
+        }
+
+        function clearPin() {
+          console.log("Clearing PIN");
+          let pinInput = document.getElementById("pinInput");
+          pinInput.innerHTML = "_ _ _ _";
+        }
+
+        function closeModal($el) {
+          $el.classList.remove("is-active");
+        }
+
+        function closeAllModals() {
+          (document.querySelectorAll(".modal") || []).forEach(($modal) => {
+            closeModal($modal);
+          });
+        }
+
+        // Add a click event on buttons to open a specific modal
+        (document.querySelectorAll(".js-modal-trigger") || []).forEach(
+          ($trigger) => {
+            const modal = $trigger.dataset.target;
+            const $target = document.getElementById(modal);
+
+            $trigger.addEventListener("click", () => {
+              openModal($target);
+            });
+          }
+        );
+
+        (document.querySelectorAll(".js-digit-trigger") || []).forEach(
+          ($trigger) => {
+            const value = $trigger.innerHTML.trim();
+
+            $trigger.addEventListener("click", () => {
+              if (value == "Clear") {
+                clearPin();
+              } else if (value == "Submit") {
+                submitPin();
+              } else {
+                enterDigit(value);
+              }
+            });
+          }
+        );
+
+        // Add a click event on various child elements to close the parent modal
+        (
+          document.querySelectorAll(
+            ".modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button"
+          ) || []
+        ).forEach(($close) => {
+          const $target = $close.closest(".modal");
+
+          $close.addEventListener("click", () => {
+            closeModal($target);
+          });
+        });
+
+        // Add a keyboard event to close all modals
+        document.addEventListener("keydown", (event) => {
+          if (event.code === "Escape") {
+            closeAllModals();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
