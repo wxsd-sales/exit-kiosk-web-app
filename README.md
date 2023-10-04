@@ -1,6 +1,6 @@
 # Exit Kiosk Web App
 
-This is an example Webex Device Kiosk Web App which provides a way to exit Kiosk Mode on via a PIN Authentication 
+This is an example Webex Device Kiosk Web App demonstrates how a Web App can disable Kiosk Mode on the Webex Device in which it is being displayed on.
 
 ![Snapshot Macro](https://github.com/wxsd-sales/exit-kiosk-web-app/assets/21026209/7b0dd5c1-e88c-450f-83a9-e0e55004ba51)
 
@@ -52,7 +52,7 @@ All contents are licensed under the MIT license. Please see [license](LICENSE) f
 
 ## Disclaimer
 
-Everything included is for demo and Proof of Concept purposes only. Use of the site is solely at your own risk. This site may contain links to third party content, which we do not warrant, endorse, or assume liability for. These demos are for Cisco Webex usecases, but are not Official Cisco Webex Branded demos.
+Everything included is for demo and Proof of Concept purposes only. Use of the site is solely at your own risk. This site may contain links to third party content, which we do not warrant, endorse, or assume liability for. These demos are for Cisco Webex use cases, but are not Official Cisco Webex Branded demos.
 
 
 ## Questions
